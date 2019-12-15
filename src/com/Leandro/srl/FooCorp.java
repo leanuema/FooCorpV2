@@ -2,10 +2,10 @@ package com.Leandro.srl;
 
 public class FooCorp {
 
-    Integer horaBase;
-    double horaExtra;
-    Integer basePorHora;
-    String nombre;
+    private Integer horaBase;
+    private double horaExtra;
+    private Integer basePorHora;
+    private String nombre;
 
     public FooCorp() {
 
@@ -18,19 +18,16 @@ public class FooCorp {
     }
 
     public int getHoraBase() {
+        this.horaBase = horaBase;
         return horaBase;
     }
 
     public void setHoraBase(int horaBase) {
-        if (horaBase <= 40) {
-            this.horaBase = horaBase;
-        } else {
-            horaExtra = (horaBase * 1.5) + basePorHora;
-            System.out.println(horaExtra);
-        }
+        this.horaBase = horaBase;
     }
 
     public int getBasePorHora() {
+        this.basePorHora = basePorHora;
         return basePorHora;
     }
 
@@ -39,6 +36,7 @@ public class FooCorp {
     }
 
     public String getNombre() {
+        this.nombre = nombre;
         return nombre;
     }
 
@@ -46,7 +44,12 @@ public class FooCorp {
         this.nombre = nombre;
     }
 
-    @Override
+    public static int pago(int horaBase, int basePorHora) {
+        int sueldo;
+        sueldo = horaBase * basePorHora;
+        return sueldo;
+    }
+
     public String toString() {
         return "FooCorp{" +
                 "horaBase=" + this.horaBase +

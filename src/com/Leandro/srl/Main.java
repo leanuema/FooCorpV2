@@ -1,19 +1,18 @@
 package com.Leandro.srl;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        FooCorp leandro = new FooCorp(40, 160, "Leandro");
-        FooCorp melisa = new FooCorp();
+        FooCorp empleadoUno = new FooCorp(40, 160, "Leandro");
+        FooCorp empleadoDos = new FooCorp();
 
-        melisa.setHoraBase(60);
-        melisa.setBasePorHora(140);
-        melisa.setNombre("Melisa");
+        empleadoDos.setHoraBase(40);
+        empleadoDos.setBasePorHora(160);
+        empleadoDos.setNombre("Melisa");
 
-        System.out.println(melisa.toString());
+        System.out.println(empleadoDos.toString());
+
+        System.out.println("El sueldo del empleado es " + FooCorp.pago(40, 160));
 
     }
 }
